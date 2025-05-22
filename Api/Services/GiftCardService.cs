@@ -8,6 +8,7 @@ public class GiftCardService(IProviderManager providerManager) : IGiftCardServic
 {
     public async Task<ValidateGiftCardResponseModel> ValidateGiftCardAsync(ValidateGiftCardRequestModel request)
     {
+        // Get Random provider 
         var values = Enum.GetValues<GiftCardProviderTypes>();
         var random = new Random();
         var randomProviderType = values[random.Next(values.Length)];
